@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Album - MVVM</string>
+    <string name="album_screen_name">Select Album</string>
+    <string name="photo_screen_name">Photos</string>
+</resources>
