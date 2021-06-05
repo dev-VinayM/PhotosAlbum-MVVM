@@ -10,9 +10,9 @@ class PhotosViewModel : ViewModel(), PhotosRepositoryListener {
     private val repository: PhotosRepository = PhotosRepository(this)
     val photoListData = MutableLiveData<List<Photo>>()
 
-    fun getPhotos() {
+    fun getPhotos(albumId : Int) {
         viewModelScope.launch {
-            repository.getPhotoList()
+            repository.getPhotoList(albumId)
         }
     }
 

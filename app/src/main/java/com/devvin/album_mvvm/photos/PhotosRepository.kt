@@ -5,14 +5,14 @@ import com.devvin.album_mvvm.network.safeApiCall
 
 class PhotosRepository(private val photosRepositoryListener: PhotosRepositoryListener) {
 
-    suspend fun getPhotoList() {
+    suspend fun getPhotoList(albumId : Int) {
         val response = safeApiCall(
             call = { apiInterface.getPhotosAsync().await() },
             errorMessage = "Error Fetching Photo List"
         )
 
         response?.let {
-            val data = response.filter { it.albumId == 42 }
+            val data = response.filter { it.albumId == albumId }
             photosRepositoryListener.onSuccess(data)
         }
     }

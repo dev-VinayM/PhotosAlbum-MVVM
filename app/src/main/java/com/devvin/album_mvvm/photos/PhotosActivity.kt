@@ -20,7 +20,8 @@ class PhotosActivity : AppCompatActivity() {
         setContentView(R.layout.activity_photos)
 
         observeDataAndSetRecyclerView()
-        photosViewModel.getPhotos()
+        val albumId = intent.getIntExtra("albumId",1)
+        photosViewModel.getPhotos(albumId)
     }
 
     private fun observeDataAndSetRecyclerView() {
